@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームの魅力を伝えるサイト</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 背景動画用のスタイル */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        /* 他のコンテンツが表示されるようにする */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        header, .title, section, footer {
+            position: relative;
+            z-index: 1;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        .game-links .game-link {
+            display: inline-block;
+            margin: 10px;
+        }
+        .game-genre {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .game-genre a {
+            flex: 1;
+            margin: 10px;
+            text-align: center;
+        }
+        .game-genre img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+        .game-genre div {
+            text-align: center;
+        }
+        .game-genre div img {
+            max-width: 200px;
+            height: auto;
+        }
+        .media img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            margin: 10px;
+        }
+        #comment-form {
+            display: flex;
+            flex-direction: column;
+        }
+        #comment-form label,
+        #comment-form input,
+        #comment-form textarea,
+        #comment-form button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- タイトルをヘッダーの上に移動 -->
+    <div class="title">
+        <h1>ゲームの魅力を伝えるサイト</h1>
+    </div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about">自己紹介</a></li>
+                <li><a href="#games">ゲームの紹介</a></li>
+                <li><a href="#favorites">好きなゲーム</a></li>
+                <li><a href="#contact">連絡先情報</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 鳴潮の画像と説明を追加 -->
+    <section class="game-links">
+        <div class="game-link">
+            <a href="star-rail:/" target="_blank">
+                <img src="https://onlinegame-pla.net/wp-content/uploads/2022/11/thum3136-2.jpg" alt="鳴潮">
+                <p>鳴潮</p>
+            </a>
+            <p>『鳴潮』は、広大なオープンワールドを舞台に、プレイヤーが自由に冒険できるアクションRPGです。美しいグラフィックスと緻密なストーリーラインが特徴で、さまざまなクエストやバトルが楽しめます。仲間と協力して敵を倒したり、様々なスキルを駆使して強敵に挑んだりと、無限の冒険があなたを待っています。</p>
+        </div>
+
+        <!-- スターレイルの画像と説明を追加 -->
+        <div class="game-link">
+            <a href="https://hsr.hoyoverse.com/ua2?utm_source=JP_google_JP_search_UA2_Brand&hoyotrace_channel=ga_channel&gad_source=1&gclid=EAIaIQobChMIqK6Ly5qHhwMVelUPAh2fqANhEAAYASAAEgLkXvD_BwE" target="_blank">
+                <img src="https://www.4gamer.net/games/599/G059954/20230709001/SS/001.jpg" alt="スターレイル">
+                <p>スターレイル</p>
+            </a>
+            <p>『スターレイル』は、壮大な宇宙を舞台にしたサイエンスファンタジーRPGです。プレイヤーは星々を巡る冒険の中で、未知の生命体や異星文明と出会い、さまざまなミッションをこなしていきます。美しいグラフィックスと奥深いストーリーが魅力の一つです。宇宙を探索しながら、仲間たちと共に新たな世界を切り開いていきましょう。</p>
+        </div>
+
+        <!-- 原神の画像と説明を追加 -->
+        <div class="game-link">
+            <a href="https://act.hoyoverse.com/puzzle/hk4e/pz_DvjBejelna/index.html?utm_source=JP_google_JP_keywords_0816V40" target="_blank">
+                <img src="https://prcdn.freetls.fastly.net/release_image/96124/199/96124-199-aee6b5d80041eb010a432262966a8956-3840x2160.jpg?format=jpeg&auto=webp&quality=85%2C65&width=1950&height=1350&fit=bounds" alt="原神">
+                <p>原神</p>
+            </a>
+            <p>『原神』は、美しいオープンワールドを探索しながら、さまざまなキャラクターを集めて冒険するアクションRPGです。豊富なストーリーと多彩なスキルを持つキャラクターたちが魅力で、仲間と協力して強力なボスに挑むこともできます。元素の力を駆使してパズルを解き明かし、テイワットの世界を冒険しましょう。</p>
+        </div>
+    </section>
+    
+    <!-- 背景用の動画 -->
+    <video id="background-video" autoplay muted loop>
+        <source src="https://cdn.pixabay.com/video/2021/02/20/65772-515379427_tiny.mp4" type="video/mp4">
+        お使いのブラウザは動画タグに対応していません。
+    </video>
+    
+    <section class="media">
+        <img src="https://i.ytimg.com/vi/Eqn2PHJS16g/maxresdefault.jpg" alt="特徴的な画像1">
+        <img src="https://onlinegame-pla.net/wp-content/uploads/2021/10/59-2.jpg" alt="特徴的な画像2">
+        <img src="https://pbs.twimg.com/media/Ffa3jupWYAApQp8?format=jpg&name=medium" alt="特徴的な画像3">
+    </section>
+    
+    <section id="home">
+        <h2>ようこそ！</h2>
+        <p>ここでは私の好きなゲームやおすすめのゲームについて紹介します。</p>
+    </section>
+
+    <section id="about">
+        <h2>自己紹介</h2>
+        <img src="https://cdn.discordapp.com/attachments/819758711097917451/1257401803662823505/image.jpg?ex=6684462f&is=6682f4af&hm=8c49461ae479414c1190dfe0ffe03a9cad9425bf8a4893806a83fb44c3076a6d&" alt="プロフィール画像" class="profile-image">
+        <p>こんにちは！私はkazuです。ゲームが大好きで、特にRPGやアクションゲームに夢中です。普段はマイペースに過ごしており、ゲームを楽しむ時間を大切にしています。新しいゲームに挑戦することも好きで、常に新しい冒険を探しています。</p>
+    </section>
+
+    <section id="games">
+        <h2>ゲームの紹介</h2>
+        <article>
+            <h3>最新のゲームレビュー</h3>
+            <a href="https://www.nintendo.com/jp/switch/banra/index.html" target="_blank">
+                <img src="https://www.nintendo.com/jp/switch/banra/assets/img/top/mv_logo.png" alt="ゼルダの伝説" class="review-image">
+            </a>
+            <p>Nintendoから発売のSwitch対応ゲームソフト『ルイージマンション２ HD』は、臆病なルイージがオバケだらけのマンションを冒険するアドベンチャーゲーム。
+
+                本作は、3DSにて発売されていた『ルイージマンション２』のグラフィックスをHD化したものとなっている。
+                
+                本作の舞台は、たくさんのオバケたちが暴れる「オバ渓谷」。プレイヤーはルイージとなり、掃除機のような相棒「オバキューム」でオバケを照らして次々と吸い込んでいく。
+                
+                また、オンラインプレイ・ローカル通信によって最大4人で遊べる本作。タワーの頂上を目指すモード「テラータワー」などが登場し、1人でじっくり遊ぶのはもちろん、みんなでワイワイ遊ぶのも楽しい作品となっている。</p>
+        </article>
+        <article>
+            <h3>人気のゲーム</h3>
+            <div class="game-genre">
+                <div>
+                    <a href="https://store.steampowered.com/app/381210/Dead_by_Daylight/" target="_blank">
+                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg?t=1717785436" alt="Dead by Daylight">
+                    </a>
+                    <p>Dead by Daylight</p>
+                    <p>マルチプレイヤーの非対称ホラーゲームで、サバイバーとして逃げ延びるか、キラーとして全員を追い詰める。</p>
+                </div>
+                <div>
+                    <a href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/" target="_blank">
+                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg?t=1716224849" alt="Grand Theft Auto V">
+                    </a>
+                    <p>Grand Theft Auto V</p>
+                    <p>広大なオープンワールドでの犯罪とカオスのアクションゲーム。自由度の高いゲームプレイが特徴。</p>
+                </div>
+                <div>
+                    <a href="https://store.steampowered.com/bundle/38285/ARK_Upgrade_Bundle/" target="_blank">
+                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/bundles/38285/dttwy0gq9cvahrjp/header_586x192.jpg?t=1706739808" alt="ARK: Survival Evolved">
+                    </a>
+                    <p>ARK: Survival Evolved</p>
+                    <p>恐竜が支配する島でサバイバルを目指すアクションアドベンチャー。建築、テイム、戦闘が楽しめる。</p>
+                </div>
+            </div>
+        </article>
+        <!-- RPGゲーム -->
+        <article>
+            <h3>RPGゲーム</h3>
+            <div class="game-genre">
+                <div>
+                    <a href="https://www.nintendo.com/jp/zelda/totk/index.html" target="_blank">
+                        <img src="https://image.gamer.ne.jp/news/2017/20170303/00046007df2ed649597d81c5f4e570ae7239/o/1.jpg" alt="ゼルダの伝説">
+                    </a>
+                    <p>ゼルダの伝説 ブレスオブザワイルド</p>
+                    <p>広大な世界を冒険し、謎を解き明かすアクションRPGの名作。</p>
+                </div>
+                <div>
+                    <a href="https://www.pokemon.co.jp/ex/xy/product/" target="_blank">
+                        <img src="https://www.pokemon.co.jp/ex/xy/product/images/img_product_01.png" alt="ポケットモンスター">
+                    </a>
+                    <p>ポケットモンスターXY</p>
+                    <p>ポケモンを捕まえ、育て、バトルを繰り広げる冒険RPG。</p>
+                </div>
+                <div>
+                    <a href="https://www.dragonquest.jp/dqm2_sp/" target="_blank">
+                        <img src="https://img.game8.jp/6614268/ab5b08f8f374eb005ca517fc524bb2b3.png/thumb" alt="ドラゴンクエスト">
+                    </a>
+                    <p>ドラゴンクエストモンスターズ2 イルとルカの不思議な鍵SP</p>
+                    <p>冒険と成長を楽しむクラシックRPGの代表作。</p>
+                </div>
+            </div>
+        </article>
+        <!-- スポーツゲーム -->
+        <article>
+            <h3>スポーツゲーム</h3>
+            <div class="game-genre">
+                <div>
+                    <a href="https://store.steampowered.com/app/1262540/Need_for_Speed/?l=japanese" target="_blank">
+                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1262540/header.jpg?t=1716834386" alt="Need for Speed">
+                    </a>
+                    <p>Need for Speed</p>
+                    <p>スリル満点のストリートレースで勝利を目指すカーレースゲーム。</p>
+                </div>
+                <div>
+                    <a href="https://store.steampowered.com/app/646910/The_Crew_2/?l=japanese" target="_blank">
+                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/646910/header_japanese.jpg?t=1699983385" alt="The Crew 2">
+                    </a>
+                    <p>The Crew 2</p>
+                    <p>広大なオープンワールドで多様な乗り物を操るマルチジャンルレースゲーム。</p>
+                </div>
+                <div>
+                    <a href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/?l=japanese" target="_blank">
+                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg?t=1718730250" alt="Forza Horizon 5">
+                    </a>
+                    <p>Forza Horizon 5</p>
+                    <p>リアルなグラフィックスとオープンワールドのレース体験を楽しむ。</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section id="contact">
+        <h2>連絡先情報</h2>
+        <p>ご質問やご意見がございましたら、お気軽にお問い合わせください。</p>
+    </section>
+
+    <!-- コメント欄を追加 -->
+    <section id="comments">
+        <h2>コメント</h2>
+        <form id="comment-form">
+            <label for="name">名前:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="comment">コメント:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+            <button type="submit">送信</button>
+        </form>
+        <div id="comment-list">
+            <h3>最近のコメント</h3>
+            <!-- コメントはここに表示されます -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 丹生 和孝</p>
+    </footer>
+</body>
+</html>
